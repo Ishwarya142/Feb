@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patient Case File ❤️</title>
+<title>Dr. Alex ❤️ Ishu</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,67 +11,74 @@
 
 <body>
 
+<!-- 🎵 Background Song -->
 <audio id="loveSong" loop>
   <source src="teenage_dream.mp3" type="audio/mpeg">
 </audio>
 
+<!-- 💖 Page 1 -->
 <div class="card" id="page1">
-  <h1>Patient Case File</h1>
+  <h1>Patient Case File 🩺</h1>
   <div class="tag">Confidential</div>
 
   <div class="typing">
     <span id="typedText"></span><span class="cursor">|</span>
   </div>
 
-  <p><strong>Patient:</strong> Ishu ❤️</p>
+  <p><strong>Patient:</strong> Ishu 💖</p>
   <p><strong>Attending Doctor:</strong> Dr. Alex 🩺</p>
 
   <button class="accept" onclick="nextPage()">Open Case</button>
 </div>
 
+<!-- 💕 Page 2 -->
 <div class="card hidden" id="page2">
   <h1>Chief Complaint</h1>
   <div class="tag">Ongoing</div>
-  <p>Persistent warmth in chest when thinking about one intelligent, handsome future anesthesiologist ❤️</p>
+  <p>Severe heart acceleration when hearing Dr. Alex's voice ❤️</p>
   <button class="accept" onclick="nextPage2()">Review Symptoms</button>
 </div>
 
+<!-- 💓 Page 3 -->
 <div class="card hidden" id="page3">
   <h1>Symptoms</h1>
-  <div class="tag">Well Documented</div>
-  <p>• Smiling for no reason</p>
-  <p>• Feeling calm hearing your voice</p>
-  <p>• Missing you 24/7</p>
-  <p>• Diagnosed with permanent love</p>
+  <div class="tag">Confirmed</div>
+  <p>• Random smiling</p>
+  <p>• Missing him 24/7</p>
+  <p>• Butterflies detected</p>
+  <p>• Diagnosed with permanent love 💘</p>
 
   <div class="ecg">
     <div class="ecg-line"></div>
   </div>
 
-  <button class="accept" onclick="finalPage()">Assessment</button>
+  <button class="accept" onclick="finalPage()">Continue</button>
 </div>
 
+<!-- 💍 Proposal -->
 <div class="card hidden" id="page4">
   <h1>Final Recommendation</h1>
   <div class="tag">High Priority</div>
-  <p>Proceed with life together.</p>
-  <p><strong>Will you be my valentine💍</strong></p>
-  <button class="accept" onclick="accepted()">Confirm Relationship</button>
-  <button class="reject" onclick="rejected()">Reject</button>
+  <p>Immediate relationship confirmation required.</p>
+  <p><strong>Dr. Alex, will you be my Valentine? 💍</strong></p>
+  <button class="accept" onclick="accepted()">YES 💖</button>
+  <button class="reject" onclick="rejected()">NO</button>
 </div>
 
+<!-- ❤️ Accepted -->
 <div class="card hidden" id="acceptPage">
-  <h1>Case Closed</h1>
+  <h1>Case Closed 💘</h1>
   <div class="tag">Approved</div>
   <p>Relationship Confirmed 💍</p>
-  <p>Prognosis: Forever ❤️</p>
+  <p>Prognosis: Forever Together ❤️</p>
 </div>
 
+<!-- 😭 Rejected -->
 <div class="card hidden" id="rejectPage">
   <h1>Error 404</h1>
   <div class="tag">Action Forbidden</div>
   <p>Rejection not medically allowed 🥺</p>
-  <button class="accept" onclick="backToQuestion()">Reconsider ❤️</button>
+  <button class="accept" onclick="backToQuestion()">Try Again 💖</button>
 </div>
 
 <script src="script.js"></script>

@@ -1,89 +1,67 @@
-// Wait until page fully loads
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* 🎶 Background Love Song */
+  // 🎵 Play song on first click
   const loveSong = document.getElementById("loveSong");
+  document.body.addEventListener("click", function () {
+    loveSong.volume = 0.6;
+    loveSong.play();
+  }, { once: true });
 
-  if (loveSong) {
-    document.body.addEventListener("click", function () {
-      loveSong.volume = 0.6; // soft romantic volume
-      loveSong.play().catch(() => {
-        // autoplay restriction safe
-      });
-    }, { once: true });
-  }
-
-  /* 💖 Typing Effect */
+  // 💖 Typing Effect
   const text = "Alex ❤️ Ishu";
   let index = 0;
   const typedText = document.getElementById("typedText");
 
   function typeEffect() {
-    if (typedText && index < text.length) {
+    if (index < text.length) {
       typedText.innerHTML += text.charAt(index);
       index++;
-      setTimeout(typeEffect, 150);
+      setTimeout(typeEffect, 120);
     }
   }
   typeEffect();
 
-  /* 💕 Floating Hearts */
+  // 💕 Floating Hearts
   function createHearts() {
     const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 12 + "px";
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
+    setTimeout(() => heart.remove(), 6000);
   }
 
   setInterval(createHearts, 400);
 
 });
 
-
-/* 💌 Page Navigation */
+// Page Navigation
 function nextPage() {
-  hide("page1");
-  show("page2");
+  document.getElementById("page1").classList.add("hidden");
+  document.getElementById("page2").classList.remove("hidden");
 }
 
 function nextPage2() {
-  hide("page2");
-  show("page3");
+  document.getElementById("page2").classList.add("hidden");
+  document.getElementById("page3").classList.remove("hidden");
 }
 
 function finalPage() {
-  hide("page3");
-  show("page4");
+  document.getElementById("page3").classList.add("hidden");
+  document.getElementById("page4").classList.remove("hidden");
 }
 
 function accepted() {
-  hide("page4");
-  show("acceptPage");
+  document.getElementById("page4").classList.add("hidden");
+  document.getElementById("acceptPage").classList.remove("hidden");
 }
 
 function rejected() {
-  hide("page4");
-  show("rejectPage");
+  document.getElementById("page4").classList.add("hidden");
+  document.getElementById("rejectPage").classList.remove("hidden");
 }
 
 function backToQuestion() {
-  hide("rejectPage");
-  show("page4");
-}
-
-/* 🔧 Helper Functions */
-function hide(id) {
-  const el = document.getElementById(id);
-  if (el) el.classList.add("hidden");
-}
-
-function show(id) {
-  const el = document.getElementById(id);
-  if (el) el.classList.remove("hidden");
+  document.getElementById("rejectPage").classList.add("hidden");
+  document.getElementById("page4").classList.remove("hidden");
 }
