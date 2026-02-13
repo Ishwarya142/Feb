@@ -6,54 +6,18 @@
 }
 
 body {
-  background: linear-gradient(135deg, #ff8fab, #ff4d6d);
+  background: linear-gradient(135deg, #ff4d6d, #ff1e56);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
-}
-
-/* Soft glow background */
-body::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  filter: blur(120px);
-  top: -50px;
-  left: -50px;
-}
-
-/* Card */
-.card {
-  background: #fff0f3;
-  color: #c9184a;
-  width: 90%;
-  max-width: 500px;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  text-align: center;
-  z-index: 10;
-}
-
-/* Tag */
-.tag {
-  background: #ffccd5;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin: 12px 0;
-  display: inline-block;
+  color: white;
 }
 
 /* Typing */
 .typing {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -67,7 +31,29 @@ body::before {
   51%,100% {opacity:0;}
 }
 
-/* Buttons */
+/* Card */
+.card {
+  background: white;
+  color: #c9184a;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.tag {
+  background: #ffccd5;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
 button {
   padding: 12px 25px;
   border: none;
@@ -79,7 +65,7 @@ button {
 }
 
 .accept {
-  background: linear-gradient(45deg, #ff4d6d, #c9184a);
+  background: linear-gradient(45deg, #ff4d6d, #ff1e56);
   color: white;
 }
 
@@ -89,29 +75,23 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .hidden {
   display: none;
 }
 
-/* Floating iPhone Hearts */
+/* Floating Hearts */
 .heart {
   position: absolute;
-  font-size: 22px;
+  color: rgba(255,255,255,0.4);
   animation: floatUp 6s linear infinite;
 }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.5);
-    opacity: 0;
-  }
+  0% { transform: translateY(100vh); opacity:1; }
+  100% { transform: translateY(-10vh); opacity:0; }
 }
 
 /* ECG */
@@ -124,7 +104,7 @@ button:hover {
 .ecg-line {
   width: 200%;
   height: 2px;
-  background: #ff4d6d;
+  background: red;
   animation: move 3s linear infinite;
 }
 

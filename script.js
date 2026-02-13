@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // 🎵 Play song on first click
   const loveSong = document.getElementById("loveSong");
-  document.body.addEventListener("click", function () {
-    loveSong.volume = 0.6;
-    loveSong.play();
-  }, { once: true });
 
-  // 💖 Typing Effect
+  function playMusic() {
+    loveSong.volume = 0.6;
+    loveSong.play().catch(function(error) {
+      console.log("Autoplay blocked:", error);
+    });
+  }
+
+  document.addEventListener("click", playMusic, { once: true });
+  document.addEventListener("touchstart", playMusic, { once: true });
+
   const text = "Alex ❤️ Ishu";
   let index = 0;
   const typedText = document.getElementById("typedText");
@@ -16,26 +20,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index < text.length) {
       typedText.innerHTML += text.charAt(index);
       index++;
-      setTimeout(typeEffect, 120);
+      setTimeout(typeEffect, 150);
     }
   }
+
   typeEffect();
 
-  // 💕 Floating Hearts
   function createHearts() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML = "💖";
+    heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
+    setTimeout(function () {
+      heart.remove();
+    }, 6000);
   }
 
-  setInterval(createHearts, 400);
+  setInterval(createHearts, 300);
 
 });
 
-// Page Navigation
 function nextPage() {
   document.getElementById("page1").classList.add("hidden");
   document.getElementById("page2").classList.remove("hidden");
